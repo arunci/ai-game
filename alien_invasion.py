@@ -3,7 +3,7 @@ import sys
 import pygame
 
 from settings import Settings
-from ship import Ship
+from stalagmite import Stalagmite
 
 
 class AlienInvasion:
@@ -19,7 +19,7 @@ class AlienInvasion:
         )
         pygame.display.set_caption("Alien Invasion")
 
-        self.ship = Ship(self)
+        self.ship = Stalagmite(self)
 
     def run_game(self):
         """Start the main loop for the game."""

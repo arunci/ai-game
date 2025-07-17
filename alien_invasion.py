@@ -3,7 +3,7 @@ import sys
 import pygame
 
 from settings import Settings
-from stalagmite import Stalagmite
+from ship import Ship
 
 
 class AlienInvasion:
@@ -19,7 +19,7 @@ class AlienInvasion:
         )
         pygame.display.set_caption("Alien Invasion")
 
-        self.ship = Stalagmite(self)
+        self.ship = Ship(self)
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -33,6 +33,9 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.rect.x += 1
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
